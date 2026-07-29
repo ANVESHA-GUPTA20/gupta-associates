@@ -179,7 +179,7 @@ Featured Properties
     <p>📍 Address: Nayaganj, Kanpur</p>
   </div>
   <h3>Property Enquiry Form</h3>
-  <form class="enquiry-form">
+  <form class="enquiry-form" onsubmit="sendWhatsapp(); return false;">
     <input type="text" placeholder="Your Name" required>
     <input type="tel" placeholder="Phone Number" required>
     <input type="email" placeholder="Email Address">
@@ -192,6 +192,24 @@ Featured Properties
     </select>
     <textarea placeholder="Your Message"></textarea>
     <button type="submit">Send Enquiry</button>
+    <script>
+function sendWhatsApp() {
+  var name = document.querySelector('input[placeholder="Your Name"]').value;
+  var phone = document.querySelector('input[placeholder="Phone Number"]').value;
+  var email = document.querySelector('input[placeholder="Email Address"]').value;
+  var property = document.querySelector('select').value;
+  var message = document.querySelector('textarea').value;
+
+  var text = "New Property Enquiry%0A%0A" +
+  "Name: " + name + "%0A" +
+  "Phone: " + phone + "%0A" +
+  "Email: " + email + "%0A" +
+  "Property: " + property + "%0A" +
+  "Message: " + message;
+
+  window.open("https://wa.me/919956307175?text=" + text, "_blank");
+}
+</script>
   </form>
 </section>
 <footer>
