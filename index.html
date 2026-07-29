@@ -191,8 +191,16 @@ Featured Properties
       <option>Commercial Property</option>
     </select>
     <textarea placeholder="Your Message"></textarea>
-    <button type="submit">Send Enquiry</button>
-    <script>
+    <button type="button" onclick="sendWhatsapp()">Send Enquiry on Whatsapp</button>
+    
+  </form>
+</section>
+<footer>
+
+© 2026 Gupta & Associates | Real Estate Consultant
+
+</footer>
+<script>
 function sendWhatsApp() {
   var name = document.querySelector('input[placeholder="Your Name"]').value;
   var phone = document.querySelector('input[placeholder="Phone Number"]').value;
@@ -210,13 +218,5 @@ function sendWhatsApp() {
   window.open("https://wa.me/919956307175?text=" + text, "_blank");
 }
 </script>
-  </form>
-</section>
-<footer>
-
-© 2026 Gupta & Associates | Real Estate Consultant
-
-</footer>
-
 </body>
 </html>
