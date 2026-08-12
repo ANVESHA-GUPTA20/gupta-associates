@@ -169,11 +169,17 @@ text-align:center;
     <img src="logo.jpeg" alt="Gupta & Associates" style="height:60px;">
 </div>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Properties</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+operties</a>
+<a href="tel:+919956307175" class="btn" style="margin-left:10px; background:#222;">
+    📞 Call Now
+</a>
+
+<a href="https://wa.me/919956307175?text=Hello%20Gupta%20%26%20Associates,%20I%20am%20interested%20in%20a%20property." class="btn" style="margin-left:10px; background:#25D366;">
+    💬 WhatsApp<nav>
+<a href="#" data-lang="home">Home</a>
+<a href="#" data-lang="properties">Properties</a>
+<a href="#" data-lang="about">About</a>
+<a href="#" data-lang="contact">Contact</a>
 </nav>
 
 </header>
@@ -186,13 +192,7 @@ text-align:center;
 
 <p>Luxury Homes • Flats • Villas • Commercial Spaces</p>
 
-<a href="#" class="btn">Explore Properties</a>
-<a href="tel:+919956307175" class="btn" style="margin-left:10px; background:#222;">
-    📞 Call Now
-</a>
-
-<a href="https://wa.me/919956307175?text=Hello%20Gupta%20%26%20Associates,%20I%20am%20interested%20in%20a%20property." class="btn" style="margin-left:10px; background:#25D366;">
-    💬 WhatsApp
+<a href="#" class="btn">Explore Pr
 </a>
 </div>
 
@@ -362,6 +362,40 @@ function sendWhatsApp() {
   "Message: " + message;
 
   window.open("https://wa.me/919956307175?text=" + text, "_blank");
+}
+</script>
+  <div class="language-switcher">
+  <button onclick="setLanguage('en')">English</button>
+  <button onclick="setLanguage('hi')">हिंदी</button>
+</div>
+
+<script>
+function setLanguage(lang) {
+  document.documentElement.lang = lang;
+
+  const translations = {
+    en: {
+      "home": "Home",
+      "about": "About",
+      "properties": "Explore Properties",
+      "contact": "Contact",
+      "book": "Book Site Visit"
+    },
+    hi: {
+      "home": "होम",
+      "about": "हमारे बारे में",
+      "properties": "प्रॉपर्टीज़ देखें",
+      "contact": "संपर्क करें",
+      "book": "साइट विज़िट बुक करें"
+    }
+  };
+
+  document.querySelectorAll("[data-lang]").forEach(function(element) {
+    const key = element.getAttribute("data-lang");
+    if (translations[lang][key]) {
+      element.textContent = translations[lang][key];
+    }
+  });
 }
 </script>
 </body>
